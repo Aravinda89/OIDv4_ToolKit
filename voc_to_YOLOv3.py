@@ -3,7 +3,9 @@ from os import getcwd
 import os
 
 
-dataset_train = 'OID\\Dataset\\train\\'
+# dataset_train = '\\OIDv4_ToolKit\\OID\\Dataset\\train\\'
+dataset_train = './OID/Dataset/train/'
+
 dataset_file = '4_CLASS_test.txt'
 classes_file = dataset_file[:-4]+'_classes.txt'
 
@@ -48,7 +50,8 @@ for CLASS in classes:
     for filename in os.listdir(CLASS):
         if not filename.endswith('.xml'):
             continue
-        fullname = os.getcwd()+'\\'+CLASS+'\\'+filename
+        # fullname = os.getcwd()+'\\'+CLASS+'\\'+filename
+        fullname = os.getcwd()+'/'+CLASS+'/'+filename
         test(fullname)
 
 for CLASS in CLS:
